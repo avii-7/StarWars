@@ -72,12 +72,16 @@ class PlayerListViewController: UIViewController {
             let selectedIndexPath = tableView.indexPathForSelectedRow {
             
             let selectedPlayer = players[selectedIndexPath.row]
+            
+            // Sorting the player matches in descending order for fulfilling Matches Screen 2nd requirement.
             selectedPlayer.matches = selectedPlayer.matches.sorted(by: >)
             vc.selectedPlayer = selectedPlayer
             
+            // PlayerDictionary for displaying opponent name in Detail Screen.
             var playersDictionary = Dictionary<Int, Player>(minimumCapacity: players.count)
             players.forEach { playersDictionary[$0.id] = $0 }
             
+            // MatchesDictionary for retrieving both players scores.
             var matchesDictionary = Dictionary<Int, Match>(minimumCapacity: matches.count)
             matches.forEach { matchesDictionary[$0.id] = $0 }
             

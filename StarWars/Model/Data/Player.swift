@@ -12,8 +12,11 @@ class Player {
     let id: Int
     let name: String
     let icon: String
+    // This will contains the score for matches wins and tie.
     var score = 0
+    // This will contains the total score for all the matches player with other players.
     var totalScore = 0
+    
     var matches: [Int] = []
     
     init(

@@ -9,6 +9,7 @@ import Foundation
 
 class ScoreHelper {
     
+    // Helps in calculating scores for matches wins and total scores of all matches.
     func populateScores(players: inout [Player], matches: [Match]) {
         
         var playersDict = Dictionary<Int, Player>(minimumCapacity: players.count)
