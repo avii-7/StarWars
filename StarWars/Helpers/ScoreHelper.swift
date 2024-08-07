@@ -11,8 +11,7 @@ class ScoreHelper {
     
     func populateScores(players: inout [Player], matches: [Match]) {
         
-        var playersDict = Dictionary<Int, Player>()
-        playersDict.reserveCapacity(players.count)
+        var playersDict = Dictionary<Int, Player>(minimumCapacity: players.count)
         
         players.forEach { player in
             playersDict[player.id] = player

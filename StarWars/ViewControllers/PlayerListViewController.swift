@@ -9,8 +9,10 @@ import UIKit
 import SDWebImage
 
 class PlayerListViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var players = [Player]()
     
@@ -18,19 +20,19 @@ class PlayerListViewController: UIViewController {
     
     private let helper = ScoreHelper()
     
-    private let playerResource = PlayerResource()
-    
-    private let matchResource = MatchResource()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        startAnimation()
         fetchData()
     }
     
     private func fetchData() {
         
         Task { @MainActor in
+            
+            let playerResource = PlayerResource()
+            let matchResource = MatchResource()
             
             var players = try await playerResource.getPlayerList()
             let matches = try await matchResource.getMatchList()
@@ -39,7 +41,9 @@ class PlayerListViewController: UIViewController {
             
             self.players = players
             self.matches = matches
+            
             tableView.reloadData()
+            stopAnimation()
         }
     }
     
@@ -48,18 +52,33 @@ class PlayerListViewController: UIViewController {
         title = "Star Wars Blaster Tournament"
     }
     
+    private func startAnimation() {
+        activityIndicator.isHidden = false
+        tableView.isHidden = true
+        activityIndicator.startAnimating()
+    }
+    
+    private func stopAnimation() {
+        activityIndicator.isHidden = true
+        tableView.isHidden = false
+        activityIndicator.stopAnimating()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? PlayerMatchDetailViewController
         
         if
             let vc,
             let selectedIndexPath = tableView.indexPathForSelectedRow {
-            vc.selectedPlayer = players[selectedIndexPath.row]
             
-            var playersDictionary = Dictionary<Int, Player>()
+            let selectedPlayer = players[selectedIndexPath.row]
+            selectedPlayer.matches = selectedPlayer.matches.sorted(by: >)
+            vc.selectedPlayer = selectedPlayer
+            
+            var playersDictionary = Dictionary<Int, Player>(minimumCapacity: players.count)
             players.forEach { playersDictionary[$0.id] = $0 }
             
-            var matchesDictionary = Dictionary<Int, Match>()
+            var matchesDictionary = Dictionary<Int, Match>(minimumCapacity: matches.count)
             matches.forEach { matchesDictionary[$0.id] = $0 }
             
             vc.playersDict = playersDictionary
@@ -83,7 +102,7 @@ extension PlayerListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.playerImage.sd_setImage(with: url)
         cell.scoreLabel.text = "\(players[indexPath.row].score)"
         cell.titleLabel.text = players[indexPath.row].name
-
+        
         return cell
     }
     

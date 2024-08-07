@@ -11,9 +11,9 @@ class PlayerMatchDetailViewController: UIViewController {
     
     var selectedPlayer: Player?
     
-    var playersDict: Dictionary<Int, Player>?
+    var playersDict = Dictionary<Int, Player>()
     
-    var matchesDict: Dictionary<Int, Match>?
+    var matchesDict = Dictionary<Int, Match>()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,48 +33,26 @@ extension PlayerMatchDetailViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        if
-            let selectedPlayer,
-            let matchesDict,
-            let playersDict {
-            
-            let matchId = selectedPlayer.matches[indexPath.row]
-            
-            if let match = matchesDict[matchId] {
-                let player1Score = match.player1.score
-                let player2Score = match.player2.score
-                cell.scoreLabel.text = "\(player1Score) - \(player2Score)"
-                
-                if let player1 = playersDict[match.player1.id] {
-                    cell.player1NameLabel.text = player1.name
-                }
-                
-                if let player2 = playersDict[match.player2.id] {
-                    cell.player2NameLabel.text = player2.name
-                }
-                
-                // BG Color
-                
-                let myScore: Int
-                let opponentScore: Int
-                
-                if selectedPlayer.id == match.player1.id {
-                    myScore = match.player1.score
-                    opponentScore = match.player2.score
-                }
-                else {
-                    myScore = match.player2.score
-                    opponentScore = match.player1.score
-                }
-                
-                if myScore > opponentScore {
-                    cell.contentView.backgroundColor = UIColor.green
-                }
-                else if myScore < opponentScore {
-                    cell.contentView.backgroundColor = UIColor.red
-                }
-            }
+        guard let selectedPlayer else { return cell }
+        
+        let matchId = selectedPlayer.matches[indexPath.row]
+        
+        guard let match = matchesDict[matchId] else { return cell }
+        
+        let player1Score = match.player1.score
+        let player2Score = match.player2.score
+        
+        cell.setScore(player1: player1Score, player2: player2Score)
+        
+        if let player1 = playersDict[match.player1.id] {
+            cell.setPlayer1Name(name: player1.name)
         }
+        
+        if let player2 = playersDict[match.player2.id] {
+            cell.setPlayer2Name(name: player2.name)
+        }
+        
+        cell.setBackgroundColor(selectedPlayerId: selectedPlayer.id, match)
         
         return cell
     }
