@@ -16,18 +16,27 @@ class PlayerListViewController: UIViewController {
     
     private var matches = [Match]()
     
+    private let helper = ScoreHelper()
+    
+    private let playerResource = PlayerResource()
+    
+    private let matchResource = MatchResource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Task { @MainActor [weak self] in
+        fetchData()
+    }
+    
+    private func fetchData() {
+        
+        Task { @MainActor in
             
-            let helper = PlayerDataHelper()
+            var players = try await playerResource.getPlayerList()
+            let matches = try await matchResource.getMatchList()
             
-            var players = try await helper.getPlayers()
-            let matches = try await helper.getMatches()
             helper.populateScores(players: &players, matches: matches)
             
-            guard let self else { return }
             self.players = players
             self.matches = matches
             tableView.reloadData()

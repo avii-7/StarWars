@@ -15,11 +15,6 @@ class PlayerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var scoreLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     override func prepareForReuse() {
         super.prepareForReuse()
         playerImage.image = nil

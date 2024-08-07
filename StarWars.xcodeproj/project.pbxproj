@@ -19,10 +19,14 @@
 		86730C7C2C41A25900B81027 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C7B2C41A25800B81027 /* PlayerTableViewCell.swift */; };
 		86730C7F2C41A40400B81027 /* PlayerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C7E2C41A40400B81027 /* PlayerResponse.swift */; };
 		86730C812C41A4B600B81027 /* MatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C802C41A4B600B81027 /* MatchResponse.swift */; };
-		86730C852C41A53A00B81027 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C842C41A53A00B81027 /* APICaller.swift */; };
-		86730C872C41A6DB00B81027 /* PlayerNetworkLayerUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C862C41A6DB00B81027 /* PlayerNetworkLayerUtility.swift */; };
-		86730C8A2C41A92D00B81027 /* PlayerDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C892C41A92D00B81027 /* PlayerDataHelper.swift */; };
+		86730C852C41A53A00B81027 /* HttpUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C842C41A53A00B81027 /* HttpUtility.swift */; };
+		86730C8A2C41A92D00B81027 /* ScoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C892C41A92D00B81027 /* ScoreHelper.swift */; };
 		86730C8C2C41A9C800B81027 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C8B2C41A9C800B81027 /* Player.swift */; };
+		86D3ED532C638793005B485D /* PlayerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED522C638793005B485D /* PlayerResource.swift */; };
+		86D3ED552C63879A005B485D /* MatchResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED542C63879A005B485D /* MatchResource.swift */; };
+		86D3ED572C63880E005B485D /* PlayerAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED562C63880E005B485D /* PlayerAPIRequest.swift */; };
+		86D3ED592C638841005B485D /* RestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED582C638841005B485D /* RestAPIRequest.swift */; };
+		86D3ED5B2C63895F005B485D /* MatchAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED5A2C63895F005B485D /* MatchAPIRequest.swift */; };
 		86EBEB522C42DD1500D585B3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 86EBEB512C42DD1500D585B3 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
@@ -41,10 +45,14 @@
 		86730C7B2C41A25800B81027 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		86730C7E2C41A40400B81027 /* PlayerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResponse.swift; sourceTree = "<group>"; };
 		86730C802C41A4B600B81027 /* MatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponse.swift; sourceTree = "<group>"; };
-		86730C842C41A53A00B81027 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
-		86730C862C41A6DB00B81027 /* PlayerNetworkLayerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNetworkLayerUtility.swift; sourceTree = "<group>"; };
-		86730C892C41A92D00B81027 /* PlayerDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataHelper.swift; sourceTree = "<group>"; };
+		86730C842C41A53A00B81027 /* HttpUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpUtility.swift; sourceTree = "<group>"; };
+		86730C892C41A92D00B81027 /* ScoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreHelper.swift; sourceTree = "<group>"; };
 		86730C8B2C41A9C800B81027 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		86D3ED522C638793005B485D /* PlayerResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerResource.swift; sourceTree = "<group>"; };
+		86D3ED542C63879A005B485D /* MatchResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResource.swift; sourceTree = "<group>"; };
+		86D3ED562C63880E005B485D /* PlayerAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAPIRequest.swift; sourceTree = "<group>"; };
+		86D3ED582C638841005B485D /* RestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIRequest.swift; sourceTree = "<group>"; };
+		86D3ED5A2C63895F005B485D /* MatchAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchAPIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +122,8 @@
 		86730C7D2C41A3CA00B81027 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				86730C7E2C41A40400B81027 /* PlayerResponse.swift */,
-				86730C802C41A4B600B81027 /* MatchResponse.swift */,
-				86730C8B2C41A9C800B81027 /* Player.swift */,
-				8601FF1E2C43B22D00B2A557 /* Match.swift */,
+				86D3ED4E2C638515005B485D /* Data */,
+				86D3ED4D2C6384FD005B485D /* Response */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,8 +131,10 @@
 		86730C822C41A52300B81027 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				86730C842C41A53A00B81027 /* APICaller.swift */,
-				86730C862C41A6DB00B81027 /* PlayerNetworkLayerUtility.swift */,
+				86D3ED502C63876A005B485D /* Player */,
+				86D3ED4F2C63873F005B485D /* Match */,
+				86730C842C41A53A00B81027 /* HttpUtility.swift */,
+				86D3ED582C638841005B485D /* RestAPIRequest.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -134,9 +142,45 @@
 		86730C882C41A8D500B81027 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				86730C892C41A92D00B81027 /* PlayerDataHelper.swift */,
+				86730C892C41A92D00B81027 /* ScoreHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		86D3ED4D2C6384FD005B485D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				86730C7E2C41A40400B81027 /* PlayerResponse.swift */,
+				86730C802C41A4B600B81027 /* MatchResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		86D3ED4E2C638515005B485D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				86730C8B2C41A9C800B81027 /* Player.swift */,
+				8601FF1E2C43B22D00B2A557 /* Match.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		86D3ED4F2C63873F005B485D /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				86D3ED542C63879A005B485D /* MatchResource.swift */,
+				86D3ED5A2C63895F005B485D /* MatchAPIRequest.swift */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		86D3ED502C63876A005B485D /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				86D3ED522C638793005B485D /* PlayerResource.swift */,
+				86D3ED562C63880E005B485D /* PlayerAPIRequest.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,17 +261,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				86730C812C41A4B600B81027 /* MatchResponse.swift in Sources */,
+				86D3ED572C63880E005B485D /* PlayerAPIRequest.swift in Sources */,
 				86730C7C2C41A25900B81027 /* PlayerTableViewCell.swift in Sources */,
 				86730C6C2C419F8A00B81027 /* PlayerListViewController.swift in Sources */,
 				86730C682C419F8A00B81027 /* AppDelegate.swift in Sources */,
-				86730C8A2C41A92D00B81027 /* PlayerDataHelper.swift in Sources */,
-				86730C852C41A53A00B81027 /* APICaller.swift in Sources */,
+				86730C8A2C41A92D00B81027 /* ScoreHelper.swift in Sources */,
+				86D3ED592C638841005B485D /* RestAPIRequest.swift in Sources */,
+				86D3ED552C63879A005B485D /* MatchResource.swift in Sources */,
+				86730C852C41A53A00B81027 /* HttpUtility.swift in Sources */,
 				8601FF1D2C43AA2600B2A557 /* PlayerMatchDetailViewController.swift in Sources */,
 				86730C7F2C41A40400B81027 /* PlayerResponse.swift in Sources */,
 				86730C6A2C419F8A00B81027 /* SceneDelegate.swift in Sources */,
-				86730C872C41A6DB00B81027 /* PlayerNetworkLayerUtility.swift in Sources */,
 				86730C8C2C41A9C800B81027 /* Player.swift in Sources */,
+				86D3ED5B2C63895F005B485D /* MatchAPIRequest.swift in Sources */,
 				8601FF222C43BB4A00B2A557 /* MatchDetailTableViewCell.swift in Sources */,
+				86D3ED532C638793005B485D /* PlayerResource.swift in Sources */,
 				8601FF1F2C43B22D00B2A557 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
