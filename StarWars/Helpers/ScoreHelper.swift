@@ -40,7 +40,7 @@ class ScoreHelper {
             player2?.matches.append(match.id)
         }
         
-        let result = players.sorted {
+        players.sort {
             if $0.score == $1.score {
                 $0.totalScore > $1.totalScore
             }
@@ -48,7 +48,5 @@ class ScoreHelper {
                 $0.score > $1.score
             }
         }
-        
-        players = result
     }
 }
