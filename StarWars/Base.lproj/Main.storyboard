@@ -98,7 +98,7 @@
                                             <outlet property="playerImage" destination="3tc-1b-dEl" id="RuN-Vp-7D7"/>
                                             <outlet property="scoreLabel" destination="3XZ-XG-2oR" id="NTE-lr-GeG"/>
                                             <outlet property="titleLabel" destination="3zO-1e-kIg" id="vI8-GW-LIW"/>
-                                            <segue destination="DKe-fn-Uy9" kind="show" id="aCt-IB-64M"/>
+                                            <segue destination="DKe-fn-Uy9" kind="show" destinationCreationSelector="makeMatchDetailViewControllerWithCoder:" id="OrP-md-XMe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,17 +120,17 @@
                     <navigationItem key="navigationItem" id="641-dd-Mqa"/>
                     <connections>
                         <outlet property="activityIndicator" destination="Pfn-Pl-kpm" id="gCa-xe-3vo"/>
-                        <outlet property="tableView" destination="DrK-Oh-ulW" id="tCb-UF-CIX"/>
+                        <outlet property="playerListTableView" destination="DrK-Oh-ulW" id="tCb-UF-CIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886.25954198473278" y="-27.464788732394368"/>
         </scene>
-        <!--Player Match Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="fVJ-eK-R6N">
             <objects>
-                <viewController id="DKe-fn-Uy9" customClass="PlayerMatchDetailViewController" customModule="StarWars" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerMatchDetailViewController" id="DKe-fn-Uy9" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TvA-Qk-7ds">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

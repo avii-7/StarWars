@@ -4,7 +4,7 @@ An app demonstrating about the Blaster tournament.
 
 This app consist of following screens: 
 
-1. Points Table: This screen will show the points table calculated by the results of all the matches played by player.
+1. Points Table: This screen will show the point's table calculated by the results of all the matches played by player.
 
 2. Matches Screen: This screen present the details of all the matches played by the player.
 

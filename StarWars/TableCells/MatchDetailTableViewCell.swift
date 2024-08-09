@@ -40,15 +40,14 @@ class MatchDetailTableViewCell: UITableViewCell {
         }
     }
     
-    func setScore(player1: Int, player2: Int) {
-        scoreLabel.text = "\(player1) - \(player2)"
-    }
-    
-    func setPlayer1Name(name: String) {
-        player1NameLabel.text = name
-    }
-    
-    func setPlayer2Name(name: String) {
-        player2NameLabel.text = name
+    func setState(state: MatchDetails) {
+        
+        player1NameLabel.text = state.player1Name
+        player2NameLabel.text = state.player2Name
+        
+        scoreLabel.text = "\(state.player1Score) - \(state.player2Score)"
+        
+        contentView.backgroundColor = state.backgroundColor
     }
 }
+

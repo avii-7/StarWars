@@ -48,8 +48,6 @@ final class HttpUtility {
             urlRequest.httpBody = try JSONEncoder().encode(body)
         }
         
-        debugPrint(urlRequest.url ?? "")
-        
         return urlRequest
     }
 }

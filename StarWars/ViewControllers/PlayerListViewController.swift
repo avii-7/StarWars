@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import SDWebImage
 
 class PlayerListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var playerListTableView: UITableView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -23,7 +22,7 @@ class PlayerListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startAnimation()
+        animation(start: true)
         fetchData()
     }
     
@@ -42,8 +41,8 @@ class PlayerListViewController: UIViewController {
             self.players = players
             self.matches = matches
             
-            tableView.reloadData()
-            stopAnimation()
+            playerListTableView.reloadData()
+            animation(start: false)
         }
     }
     
@@ -51,42 +50,17 @@ class PlayerListViewController: UIViewController {
         super.viewWillAppear(animated)
         title = "Star Wars Blaster Tournament"
     }
-    
-    private func startAnimation() {
-        activityIndicator.isHidden = false
-        tableView.isHidden = true
-        activityIndicator.startAnimating()
-    }
-    
-    private func stopAnimation() {
-        activityIndicator.isHidden = true
-        tableView.isHidden = false
-        activityIndicator.stopAnimating()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as? PlayerMatchDetailViewController
         
-        if
-            let vc,
-            let selectedIndexPath = tableView.indexPathForSelectedRow {
-            
-            let selectedPlayer = players[selectedIndexPath.row]
-            
-            // Sorting the player matches in descending order for fulfilling Matches Screen 2nd requirement.
-            selectedPlayer.matches = selectedPlayer.matches.sorted(by: >)
-            vc.selectedPlayer = selectedPlayer
-            
-            // PlayerDictionary for displaying opponent name in Detail Screen.
-            var playersDictionary = Dictionary<Int, Player>(minimumCapacity: players.count)
-            players.forEach { playersDictionary[$0.id] = $0 }
-            
-            // MatchesDictionary for retrieving both players scores.
-            var matchesDictionary = Dictionary<Int, Match>(minimumCapacity: matches.count)
-            matches.forEach { matchesDictionary[$0.id] = $0 }
-            
-            vc.playersDict = playersDictionary
-            vc.matchesDict = matchesDictionary
+    private func animation(start: Bool) {
+        if start {
+            activityIndicator.isHidden = false
+            playerListTableView.isHidden = true
+            activityIndicator.startAnimating()
+        }
+        else {
+            activityIndicator.isHidden = true
+            playerListTableView.isHidden = false
+            activityIndicator.stopAnimating()
         }
     }
 }
@@ -102,10 +76,8 @@ extension PlayerListViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        let url = URL(string: players[indexPath.row].icon)
-        cell.playerImage.sd_setImage(with: url)
-        cell.scoreLabel.text = "\(players[indexPath.row].score)"
-        cell.titleLabel.text = players[indexPath.row].name
+        let model = players[indexPath.row]
+        cell.setState(model: model)
         
         return cell
     }
@@ -115,3 +87,20 @@ extension PlayerListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension PlayerListViewController {
+    
+    @IBSegueAction
+    func makeMatchDetailViewController(coder: NSCoder) -> MatchDetailViewController? {
+        
+        let indexPath = playerListTableView.indexPathForSelectedRow
+        
+        guard let indexPath else { return nil }
+        
+        // Sorting the player matches in descending order for fulfilling Matches Screen 2nd requirement.
+        let selectedPlayer = players[indexPath.row]
+        selectedPlayer.matches = selectedPlayer.matches.sorted(by: >)
+    
+        let vc = MatchDetailViewController(coder: coder, selectedPlayer: selectedPlayer, matches: matches, players: players)
+        return vc
+    }
+}

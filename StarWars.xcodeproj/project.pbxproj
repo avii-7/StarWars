@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8601FF1D2C43AA2600B2A557 /* PlayerMatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601FF1C2C43AA2600B2A557 /* PlayerMatchDetailViewController.swift */; };
+		8601FF1D2C43AA2600B2A557 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601FF1C2C43AA2600B2A557 /* MatchDetailViewController.swift */; };
 		8601FF1F2C43B22D00B2A557 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601FF1E2C43B22D00B2A557 /* Match.swift */; };
 		8601FF222C43BB4A00B2A557 /* MatchDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8601FF212C43BB4A00B2A557 /* MatchDetailTableViewCell.swift */; };
+		86348AEA2C63F6D0008B5154 /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86348AE92C63F6D0008B5154 /* ImageUtility.swift */; };
 		86730C682C419F8A00B81027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C672C419F8A00B81027 /* AppDelegate.swift */; };
 		86730C6A2C419F8A00B81027 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C692C419F8A00B81027 /* SceneDelegate.swift */; };
 		86730C6C2C419F8A00B81027 /* PlayerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86730C6B2C419F8A00B81027 /* PlayerListViewController.swift */; };
@@ -27,13 +28,14 @@
 		86D3ED572C63880E005B485D /* PlayerAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED562C63880E005B485D /* PlayerAPIRequest.swift */; };
 		86D3ED592C638841005B485D /* RestAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED582C638841005B485D /* RestAPIRequest.swift */; };
 		86D3ED5B2C63895F005B485D /* MatchAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D3ED5A2C63895F005B485D /* MatchAPIRequest.swift */; };
-		86EBEB522C42DD1500D585B3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 86EBEB512C42DD1500D585B3 /* SDWebImage */; };
+		86D973F32C660B9C0082DB03 /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D973F22C660B9C0082DB03 /* MatchDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8601FF1C2C43AA2600B2A557 /* PlayerMatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMatchDetailViewController.swift; sourceTree = "<group>"; };
+		8601FF1C2C43AA2600B2A557 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
 		8601FF1E2C43B22D00B2A557 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8601FF212C43BB4A00B2A557 /* MatchDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailTableViewCell.swift; sourceTree = "<group>"; };
+		86348AE92C63F6D0008B5154 /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
 		86730C642C419F8A00B81027 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86730C672C419F8A00B81027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86730C692C419F8A00B81027 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		86D3ED562C63880E005B485D /* PlayerAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerAPIRequest.swift; sourceTree = "<group>"; };
 		86D3ED582C638841005B485D /* RestAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIRequest.swift; sourceTree = "<group>"; };
 		86D3ED5A2C63895F005B485D /* MatchAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchAPIRequest.swift; sourceTree = "<group>"; };
+		86D973F22C660B9C0082DB03 /* MatchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86EBEB522C42DD1500D585B3 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				86730C6B2C419F8A00B81027 /* PlayerListViewController.swift */,
-				8601FF1C2C43AA2600B2A557 /* PlayerMatchDetailViewController.swift */,
+				8601FF1C2C43AA2600B2A557 /* MatchDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				86730C892C41A92D00B81027 /* ScoreHelper.swift */,
+				86348AE92C63F6D0008B5154 /* ImageUtility.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			children = (
 				86730C8B2C41A9C800B81027 /* Player.swift */,
 				8601FF1E2C43B22D00B2A557 /* Match.swift */,
+				86D973F22C660B9C0082DB03 /* MatchDetails.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -200,7 +204,6 @@
 			);
 			name = StarWars;
 			packageProductDependencies = (
-				86EBEB512C42DD1500D585B3 /* SDWebImage */,
 			);
 			productName = StarWars;
 			productReference = 86730C642C419F8A00B81027 /* StarWars.app */;
@@ -231,7 +234,6 @@
 			);
 			mainGroup = 86730C5B2C419F8A00B81027;
 			packageReferences = (
-				86EBEB502C42DD1500D585B3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 86730C652C419F8A00B81027 /* Products */;
 			projectDirPath = "";
@@ -262,14 +264,16 @@
 			files = (
 				86730C812C41A4B600B81027 /* MatchResponse.swift in Sources */,
 				86D3ED572C63880E005B485D /* PlayerAPIRequest.swift in Sources */,
+				86D973F32C660B9C0082DB03 /* MatchDetails.swift in Sources */,
 				86730C7C2C41A25900B81027 /* PlayerTableViewCell.swift in Sources */,
 				86730C6C2C419F8A00B81027 /* PlayerListViewController.swift in Sources */,
 				86730C682C419F8A00B81027 /* AppDelegate.swift in Sources */,
 				86730C8A2C41A92D00B81027 /* ScoreHelper.swift in Sources */,
 				86D3ED592C638841005B485D /* RestAPIRequest.swift in Sources */,
 				86D3ED552C63879A005B485D /* MatchResource.swift in Sources */,
+				86348AEA2C63F6D0008B5154 /* ImageUtility.swift in Sources */,
 				86730C852C41A53A00B81027 /* HttpUtility.swift in Sources */,
-				8601FF1D2C43AA2600B2A557 /* PlayerMatchDetailViewController.swift in Sources */,
+				8601FF1D2C43AA2600B2A557 /* MatchDetailViewController.swift in Sources */,
 				86730C7F2C41A40400B81027 /* PlayerResponse.swift in Sources */,
 				86730C6A2C419F8A00B81027 /* SceneDelegate.swift in Sources */,
 				86730C8C2C41A9C800B81027 /* Player.swift in Sources */,
@@ -499,25 +503,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		86EBEB502C42DD1500D585B3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.19.4;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		86EBEB512C42DD1500D585B3 /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 86EBEB502C42DD1500D585B3 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 86730C5C2C419F8A00B81027 /* Project object */;
 }
